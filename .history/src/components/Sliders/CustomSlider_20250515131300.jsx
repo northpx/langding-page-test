@@ -1,0 +1,50 @@
+import React, { useRef } from 'react'
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation"
+import { Navigation } from 'swiper/modules';
+import img from '../../assets/image (1).png';
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import TitleCustom from '../Helper/TitleCustom';
+
+const CustomSlider = () => {
+    const swiperRef = useRef();
+  return (
+    <div className="flex flex-col gap-2">
+      <div className="flex justify-between items-center">
+        <TitleCustom title="nft drops calendar" />
+        {/* {button silder} */}
+        <div className="flex gap-2">
+          <a
+            onClick={() => swiperRef.current?.slidePrev()}
+            className="p-1 md:p-2 border-none rounded-md md:rounded-[12px] outline-none bg-[#383A42] cursor-pointer text-white/60 hover:text-gray-400 hover:opacity-85"
+          >
+            {/* <ChevronLeft className="m-2"/> */}
+            <IoIosArrowBack size={24}  />
+          </a>
+          <a
+            onClick={() => swiperRef.current?.slideNext()}
+            className="p-1 md:p-2 border-none rounded-md md:rounded-[12px] outline-none bg-[#383A42] cursor-pointer text-white/60 hover:text-gray-400 hover:opacity-85"
+          >
+            {/* <ChevronRight className="m-2"/> */}
+            <IoIosArrowForward size={24} className="text-white/60" />
+          </a>
+        </div>
+      </div>
+      {/* {swiper slider} */}
+      <div className="w-full">
+        <Swiper slidesPerView={1} modules={[Navigation]}>
+          <SwiperSlide className="aspect-[350/171]">
+            <img
+              src={img}
+              alt=""
+              className="w-full h-full md:h-60 object-cover overflow-hidden rounded-lg "
+            />
+          </SwiperSlide>
+        </Swiper>
+      </div>
+    </div>
+  );
+}
+
+export default CustomSlider

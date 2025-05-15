@@ -6,11 +6,11 @@ import CustomSlider from '../Sliders/CustomSlider';
 
 const GridCalendar = () => {
   return (
-      <div className='grid grid-cols-1 gap-y-10 md:grid md:grid-cols-2 md:gap-4'>
-          <div className=''>
+      <div className='grid grid-cols-1 gap-y-10 md:grid md:grid-cols-3 md:gap-4'>
+          <div className='w-full col-span-2'>
             <CustomSlider />
           </div>
-          <div className='grid grid-cols-2 gap-4'>
+          <div className='w-full col-span-1'>
               <div className=''>
                 <Cards title={'Hot Nft'} image={image1}/>
               </div>
@@ -18,6 +18,7 @@ const GridCalendar = () => {
                 <Cards title={'Promotion'} image={image2}/>
               </div>
           </div>
+          <div></div>
       </div>
   )
 }
